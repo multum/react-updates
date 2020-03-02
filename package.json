@@ -1,0 +1,57 @@
+{
+  "name": "react-updates",
+  "version": "0.0.1",
+  "description": "React component update debugger",
+  "author": {
+    "name": "Andrew Vereshchak",
+    "email": "andrew.vereshchak@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/multum/react-updates.git"
+  },
+  "homepage": "https://github.com/multum/react-updates",
+  "bugs": "https://github.com/multum/react-updates/issues",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "keywords": [
+    "react",
+    "debug",
+    "react-updates",
+    "render"
+  ],
+  "scripts": {
+    "eslint": "eslint --max-warnings=0 **/*.js",
+    "format": "prettier --write **/*.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
+    "react": "^16.13.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
+    "*.{md,html}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
