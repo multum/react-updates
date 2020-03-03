@@ -1,7 +1,7 @@
 {
   "name": "react-updates",
   "version": "0.0.1",
-  "description": "React component update debugger",
+  "description": "React tool for debugging redundant re-renders",
   "author": {
     "name": "Andrew Vereshchak",
     "email": "andrew.vereshchak@gmail.com"
@@ -19,9 +19,9 @@
     "types"
   ],
   "keywords": [
+    "react-updates",
     "react",
     "debug",
-    "react-updates",
     "render"
   ],
   "scripts": {

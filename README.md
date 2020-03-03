@@ -1,17 +1,25 @@
-<br/>
+# react-updates
 
-## react-updates
-
-<!-- ![](https://multum.github.io/react-updates/logo.svg) -->
-
-**React** component update **debugger**
+**React** tool for debugging **redundant re-renders**
 
 ![](https://img.shields.io/npm/l/react-updates.svg?style=flat-square)
 ![](https://img.shields.io/npm/v/react-updates.svg?style=flat-square)
+![](https://img.shields.io/bundlephobia/min/react-updates?style=flat-square)
 
-> *Do not use in production*
+> _Do not use in production_
 
-# Getting started
+## Motivation
+
+Trying to minimize the number of re-renders in our components using `PureComponent` or `React.memo`, developers spend a lot of time debugging redundant re-renders
+
+`react-updates` is designed to simplify this process
+
+![](https://forthebadge.com/images/badges/built-with-love.svg)
+![](https://forthebadge.com/images/badges/makes-people-smile.svg)
+
+## Getting started
+
+> [_CodeSandbox_](https://codesandbox.io/s/react-updates-zm830)
 
 ```bash
 npm i --save-dev react-updates
@@ -19,47 +27,47 @@ npm i --save-dev react-updates
 yarn add --dev react-updates
 ```
 
-> [*CodeSandbox*](https://codesandbox.io/s/react-updates-zm830)
-
 ## Using hook
 
 ```javascript
+import React from 'react';
 import { useUpdateDebugger } from 'react-updates';
 
-const Counter = (props) => { 
-  useUpdateDebugger(props)
-  return <div>Current value: {props.value}</div>
-}
+const Counter = props => {
+  useUpdateDebugger(props);
+  return <div>Current value: {props.value}</div>;
+};
 ```
 
 ## Using HOC
 
 ```javascript
+import React from 'react';
 import { withUpdateDebugger } from 'react-updates';
 
-const Counter = (props) => { 
-  return <div>Current value: {props.value}</div>
-}
+const Counter = props => {
+  return <div>Current value: {props.value}</div>;
+};
 
-export default withUpdateDebugger(Counter)
+export default withUpdateDebugger(Counter);
 ```
 
 ## Using debug function
 
 ```javascript
+import React, { Component } from 'react';
 import { debugUpdates } from 'react-updates';
 
 class Counter extends Component {
   componentDidUpdate(prevProps) {
-    debugUpdates(prevProps, this.props)
+    debugUpdates(prevProps, this.props);
   }
 
   render() {
-     return <div>Current value: {this.props.value}</div>
+    return <div>Current value: {this.props.value}</div>;
   }
 }
 ```
-
 
 ## Contributing
 
