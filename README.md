@@ -27,47 +27,45 @@ npm i --save-dev react-updates
 yarn add --dev react-updates
 ```
 
-## Using hook
-
 ```javascript
-import React from 'react';
-import { useUpdateDebugger } from 'react-updates';
+import { useDebugger } from 'react-updates';
 
-const Counter = props => {
-  useUpdateDebugger(props);
-  return <div>Current value: {props.value}</div>;
-};
-```
+const View = React.memo(props => {
+  useDebugger('View', props);
+  return <div styles={props.styles}>{props.content}</div>;
+});
 
-## Using HOC
+// or using a class component
 
-```javascript
-import React from 'react';
-import { withUpdateDebugger } from 'react-updates';
+import { debugComponentUpdate } from 'react-updates';
 
-const Counter = props => {
-  return <div>Current value: {props.value}</div>;
-};
-
-export default withUpdateDebugger(Counter);
-```
-
-## Using debug function
-
-```javascript
-import React, { Component } from 'react';
-import { debugUpdates } from 'react-updates';
-
-class Counter extends Component {
+class View extends PureComponent {
   componentDidUpdate(prevProps) {
-    debugUpdates(prevProps, this.props);
+    debugComponentUpdate('View', prevProps, this.props);
   }
-
-  render() {
-    return <div>Current value: {this.props.value}</div>;
-  }
+  // ...
 }
 ```
+
+```javascript
+export default function App() {
+  const [value, setValue] = useState('');
+  return (
+    <div className="App">
+      <input onChange={e => setValue(e.target.value)} />
+      <View
+        // < ! > causes re-rendering
+        styles={{ width: '100%', display: 'flex' }}
+        content="Example use react-updates"
+      />
+    </div>
+  );
+}
+```
+
+<p align='center'>
+    <img width='640px' src='https://raw.githubusercontent.com/multum/react-updates/master/docs/component-styles.png'/>
+</p>
 
 ## Contributing
 

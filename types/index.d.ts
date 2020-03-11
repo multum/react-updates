@@ -7,8 +7,6 @@
 
 interface Props { [key: string] : any }
 
-export function debugUpdates (prevProps: Props | void, nextProps: Props): void
+export function useDebugger (component: Function | String | null, props: Props): void
 
-export function useUpdateDebugger (props: Props): void
-
-export function withUpdateDebugger (component): void
+export function debugComponentUpdate (component: Function | String | null, prevProps: Props, props: Props): void
