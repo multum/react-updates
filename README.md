@@ -14,12 +14,12 @@ Trying to minimize the number of re-renders in our components using `PureCompone
 
 `react-updates` is designed to simplify this process
 
-![](https://forthebadge.com/images/badges/built-with-love.svg)
-![](https://forthebadge.com/images/badges/makes-people-smile.svg)
+![](https://img.shields.io/badge/built%20with-love-yellow?style=for-the-badge&color=fe7d37)
+![](https://img.shields.io/badge/makes%20people-smile-yellow?style=for-the-badge&color=389ad5)
 
 ## Getting started
 
-> [_CodeSandbox_](https://codesandbox.io/s/react-updates-zm830)
+[![](https://img.shields.io/badge/sandbox-demo-yellow?style=for-the-badge&logo=codesandbox&color=389ad5)](https://codesandbox.io/s/react-updates-zm830)
 
 ```bash
 npm i --save-dev react-updates
@@ -35,26 +35,13 @@ const View = React.memo(props => {
   return <div styles={props.styles}>{props.content}</div>;
 });
 
-// or using a class component
-
-import { debugComponentUpdate } from 'react-updates';
-
-class View extends PureComponent {
-  componentDidUpdate(prevProps) {
-    debugComponentUpdate('View', prevProps, this.props);
-  }
-  // ...
-}
-```
-
-```javascript
 export default function App() {
-  const [value, setValue] = useState('');
+  const [, setValue] = useState('');
   return (
-    <div className="App">
+    <div>
       <input onChange={e => setValue(e.target.value)} />
       <View
-        // < ! > causes re-rendering
+        // < ❗️ > causes re-rendering
         styles={{ width: '100%', display: 'flex' }}
         content="Example use react-updates"
       />
@@ -66,6 +53,19 @@ export default function App() {
 <p align='center'>
     <img width='640px' src='https://raw.githubusercontent.com/multum/react-updates/master/docs/component-styles.png'/>
 </p>
+
+## Using a class component
+
+```javascript
+import { debugComponentUpdate } from 'react-updates';
+
+class View extends PureComponent {
+  componentDidUpdate(prevProps) {
+    debugComponentUpdate('View', prevProps, this.props);
+  }
+  // ...
+}
+```
 
 ## Contributing
 
