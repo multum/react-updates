@@ -1,6 +1,6 @@
 # react-updates
 
-**React** tool for debugging **redundant re-renders**
+Ease-to-use **React** tool for debugging **redundant re-renders**
 
 ![](https://img.shields.io/npm/l/react-updates.svg?style=flat-square)
 ![](https://img.shields.io/npm/v/react-updates.svg?style=flat-square)
