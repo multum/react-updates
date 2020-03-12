@@ -6,8 +6,6 @@
 ![](https://img.shields.io/npm/v/react-updates.svg?style=flat-square)
 ![](https://img.shields.io/bundlephobia/min/react-updates?style=flat-square)
 
-> _Do not use in production_
-
 ## Motivation
 
 Trying to minimize the number of re-renders in our components using `PureComponent` or `React.memo`, developers spend a lot of time debugging redundant re-renders
@@ -25,6 +23,15 @@ Trying to minimize the number of re-renders in our components using `PureCompone
 npm i --save-dev react-updates
 # or using yarn
 yarn add --dev react-updates
+```
+
+```javascript
+// src/index.js
+import { setDebuggerSettings } from 'react-updates';
+
+setDebuggerSettings({
+  disabled: process.env.NODE_ENV === 'production',
+});
 ```
 
 ```javascript

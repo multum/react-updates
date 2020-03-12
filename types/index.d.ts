@@ -5,7 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-interface Props { [key: string] : any }
+interface Props {
+  [key: string]: any
+}
+
+interface DebuggerSettings {
+  disabled: Boolean
+}
+
+export function setDebuggerSettings(settings: DebuggerSettings): DebuggerSettings;
 
 export function useDebugger (component: Function | String | null, props: Props): void
 
