@@ -39,26 +39,26 @@ import { useDebugger } from 'react-updates';
 
 const View = React.memo(props => {
   useDebugger('View', props);
-  return <div styles={props.styles}>{props.content}</div>;
+  return <div style={props.styles}>{props.content}</div>;
 });
 
-export default function App() {
+const App = () => {
   const [, setValue] = useState('');
   return (
     <div>
       <input onChange={e => setValue(e.target.value)} />
       <View
-        // < ❗️ > causes re-rendering
+        // < ❗ > causes re-rendering
         styles={{ width: '100%', display: 'flex' }}
         content="Example use react-updates"
       />
     </div>
   );
-}
+};
 ```
 
 <p align='center'>
-    <img width='640px' src='https://raw.githubusercontent.com/multum/react-updates/master/docs/component-styles.png'/>
+    <img width='680px' src='https://raw.githubusercontent.com/multum/react-updates/master/docs/component-styles.png'/>
 </p>
 
 ## Using a class component
@@ -68,7 +68,7 @@ import { debugComponentUpdate } from 'react-updates';
 
 class View extends PureComponent {
   componentDidUpdate(prevProps) {
-    debugComponentUpdate('View', prevProps, this.props);
+    debugComponentUpdate(View, prevProps, this.props);
   }
   // ...
 }

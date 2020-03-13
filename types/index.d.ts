@@ -8,6 +8,7 @@
 interface DebuggerSettings {
   disabled?: boolean;
 }
+
 /**
  * @example
  * import { setDebuggerSettings } from 'react-updates';

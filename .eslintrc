@@ -6,8 +6,6 @@
   "rules": {
     "prettier/prettier": "error",
     "prefer-const": ["error", {"destructuring": "all"}],
-    "lines-between-class-members": ["error", "always"],
-    "strict": ["error", "global"],
-    "curly": "warn"
+    "lines-between-class-members": ["error", "always"]
   }
 }
