@@ -5,16 +5,47 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-interface Props {
-  [key: string]: any
-}
-
 interface DebuggerSettings {
-  disabled: Boolean
+  disabled?: boolean;
 }
+/**
+ * @example
+ * import { setDebuggerSettings } from 'react-updates';
+ * setDebuggerSettings({
+ *   disabled: process.env.NODE_ENV === 'production'
+ * });
+ */
+export function setDebuggerSettings(
+  settings: DebuggerSettings
+): DebuggerSettings;
 
-export function setDebuggerSettings(settings: DebuggerSettings): DebuggerSettings;
+/**
+ * @example
+ * import { useDebugger } from 'react-updates';
+ * const ViewComponent = (props) => {
+ *   useDebugger('View', props);
+ *   return '...'
+ * };
+ */
+export function useDebugger(
+  component: Function | string | null,
+  props: object
+): void;
 
-export function useDebugger (component: Function | String | null, props: Props): void
-
-export function debugComponentUpdate (component: Function | String | null, prevProps: Props, props: Props): void
+/**
+ * @example
+ * import { debugComponentUpdate } from 'react-updates';
+ * class View extends Component {
+ *   componentDidUpdate(prevProps) {
+ *     debugComponentUpdate('View', prevProps, this.props);
+ *   }
+ *   render() {
+ *     return '...'
+ *   }
+ * };
+ */
+export function debugComponentUpdate(
+  component: object | string | null,
+  prevProps: object,
+  props: object
+): void;

@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "eslint": "eslint --max-warnings=0 **/*.js",
-    "format": "prettier --write **/*.js"
+    "format": "prettier --write **/*.js **/*.ts"
   },
   "license": "MIT",
   "peerDependencies": {
