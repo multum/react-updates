@@ -37,7 +37,7 @@ setDebuggerSettings({
 ```javascript
 import { useDebugger } from 'react-updates';
 
-const View = React.memo(props => {
+const View = React.memo((props) => {
   useDebugger('View', props);
   return <div style={props.styles}>{props.content}</div>;
 });
@@ -46,7 +46,7 @@ const App = () => {
   const [, setValue] = useState('');
   return (
     <div>
-      <input onChange={e => setValue(e.target.value)} />
+      <input onChange={(e) => setValue(e.target.value)} />
       <View
         // < ❗ > causes re-rendering
         styles={{ width: '100%', display: 'flex' }}

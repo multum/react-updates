@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useDebugger initial render 1`] = `
+Array [
+  Object {
+    "__": "console.info",
+    "arguments": Array [
+      "%cDebugComponent%c > Initial render",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+  Object {
+    "__": "console.warn",
+    "arguments": Array [
+      "%cDebugComponent%c > Re-render without props changes",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+]
+`;
+
+exports[`useDebugger normal re-render 1`] = `
+Array [
+  Object {
+    "__": "console.info",
+    "arguments": Array [
+      "%cDebugComponent%c > Initial render",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+  Object {
+    "__": "console.group",
+    "arguments": Array [
+      "%cDebugComponent%c > Re-render with props changes",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+  Object {
+    "__": "console.info",
+    "arguments": Array [
+      "%c \\"content\\" %c
+%c  - \\"foo\\" 
+%c  + \\"bar\\" ",
+      "background: white; color: black; line-height: 18px; margin-top: 3px",
+      "background: none; line-height: 18px; color: #ababab; font-size: .85em",
+      "background: #ffdce0; line-height: 18px; color: black",
+      "background: #cdffd8; line-height: 18px; color: black; margin-bottom: 4px",
+    ],
+  },
+  Object {
+    "__": "console.groupEnd",
+    "arguments": Array [],
+  },
+]
+`;
+
+exports[`useDebugger redundant re-render 1`] = `
+Array [
+  Object {
+    "__": "console.info",
+    "arguments": Array [
+      "%cDebugComponent%c > Initial render",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+  Object {
+    "__": "console.group",
+    "arguments": Array [
+      "%cDebugComponent%c > Re-render with props changes",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+  Object {
+    "__": "console.info",
+    "arguments": Array [
+      "%c \\"style\\" %c but not visually changed
+%c  - {\\"width\\":\\"100%\\"} 
+%c  + {\\"width\\":\\"100%\\"} ",
+      "background: white; color: black; line-height: 18px; margin-top: 3px",
+      "background: none; line-height: 18px; color: #ababab; font-size: .85em",
+      "background: #ffdce0; line-height: 18px; color: black",
+      "background: #cdffd8; line-height: 18px; color: black; margin-bottom: 4px",
+    ],
+  },
+  Object {
+    "__": "console.groupEnd",
+    "arguments": Array [],
+  },
+]
+`;
+
+exports[`useDebugger redundant re-render without change props 1`] = `
+Array [
+  Object {
+    "__": "console.info",
+    "arguments": Array [
+      "%cDebugComponent%c > Initial render",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+  Object {
+    "__": "console.warn",
+    "arguments": Array [
+      "%cDebugComponent%c > Re-render without props changes",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+]
+`;

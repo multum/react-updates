@@ -1,9 +1,4 @@
-/**
- * Copyright (c) 2020-present Andrew Vereshchak
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+import { ComponentClass, FunctionComponent } from 'react';
 
 interface DebuggerSettings {
   disabled?: boolean;
@@ -29,7 +24,7 @@ export function setDebuggerSettings(
  * };
  */
 export function useDebugger(
-  component: Function | string | null,
+  component: FunctionComponent | string,
   props: object
 ): void;
 
@@ -46,7 +41,7 @@ export function useDebugger(
  * };
  */
 export function debugComponentUpdate(
-  component: object | string | null,
+  component: ComponentClass | FunctionComponent | string,
   prevProps: object,
   props: object
 ): void;

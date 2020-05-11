@@ -2,47 +2,37 @@
   "name": "react-updates",
   "version": "0.2.1",
   "description": "React tool for debugging redundant re-renders",
-  "author": {
-    "name": "Andrew Vereshchak",
-    "email": "andrew.vereshchak@gmail.com"
-  },
+  "keywords": [
+    "react",
+    "update",
+    "render",
+    "debug"
+  ],
+  "homepage": "https://github.com/multum/react-updates",
+  "bugs": "https://github.com/multum/react-updates/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/multum/react-updates.git"
   },
-  "homepage": "https://github.com/multum/react-updates",
-  "bugs": "https://github.com/multum/react-updates/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Andrew Vereshchak",
+    "email": "andrew.vereshchak@gmail.com"
+  },
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "files": [
     "lib",
     "types"
   ],
-  "keywords": [
-    "react-updates",
-    "react",
-    "debug",
-    "render"
-  ],
   "scripts": {
-    "eslint": "eslint --max-warnings=0 **/*.js",
-    "format": "prettier --write **/*.js **/*.ts **/*.md"
-  },
-  "license": "MIT",
-  "peerDependencies": {
-    "react": "^16.8.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1"
+    "format": "prettier --write .",
+    "lint": "eslint --max-warnings=0 .",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn test && lint-staged"
     }
   },
   "lint-staged": {
@@ -51,9 +41,29 @@
       "eslint",
       "git add"
     ],
-    "*.{ts,md,html}": [
+    "*.{ts,md,html,json}": [
       "prettier --write",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@testing-library/react": "^10.0.4",
+    "babel-jest": "^26.0.1",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
   }
 }
