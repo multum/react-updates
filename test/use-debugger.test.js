@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDebugger, setDebuggerSettings } from '../';
+import { useDebugger, setDebuggerSettings } from '../lib';
 import * as utils from './utils';
 import { render } from '@testing-library/react';
 

@@ -13,7 +13,7 @@ Array [
   Object {
     "__": "console.warn",
     "arguments": Array [
-      "%cDebugComponent%c > Re-render without props changes",
+      "%cDebugComponent%c > Re-render without changes",
       "color: green; font-weight: bold",
       "font-weight: bold",
     ],
@@ -34,7 +34,7 @@ Array [
   Object {
     "__": "console.group",
     "arguments": Array [
-      "%cDebugComponent%c > Re-render with props changes",
+      "%cDebugComponent%c > Re-render with changes",
       "color: green; font-weight: bold",
       "font-weight: bold",
     ],
@@ -43,12 +43,14 @@ Array [
     "__": "console.info",
     "arguments": Array [
       "%c \\"content\\" %c
-%c  - \\"foo\\" 
-%c  + \\"bar\\" ",
+%c  - %s 
+%c  + %s ",
       "background: white; color: black; line-height: 18px; margin-top: 2px",
       "background: none; line-height: 18px; color: #ababab; font-size: .85em",
       "background: #ffdce0; line-height: 18px; color: black",
-      "background: #cdffd8; line-height: 18px; color: black; margin-bottom: 4px",
+      "\\"foo\\"",
+      "background: #cdffd8; line-height: 18px; color: black; margin-bottom: 2px",
+      "\\"bar\\"",
     ],
   },
   Object {
@@ -71,7 +73,7 @@ Array [
   Object {
     "__": "console.group",
     "arguments": Array [
-      "%cDebugComponent%c > Re-render with props changes",
+      "%cDebugComponent%c > Re-render with changes",
       "color: green; font-weight: bold",
       "font-weight: bold",
     ],
@@ -80,12 +82,14 @@ Array [
     "__": "console.info",
     "arguments": Array [
       "%c \\"style\\" %c but not visually changed
-%c  - {\\"width\\":\\"100%\\"} 
-%c  + {\\"width\\":\\"100%\\"} ",
+%c  - %s 
+%c  + %s ",
       "background: white; color: black; line-height: 18px; margin-top: 2px",
       "background: none; line-height: 18px; color: #ababab; font-size: .85em",
       "background: #ffdce0; line-height: 18px; color: black",
-      "background: #cdffd8; line-height: 18px; color: black; margin-bottom: 4px",
+      "{\\"width\\":\\"100%\\"}",
+      "background: #cdffd8; line-height: 18px; color: black; margin-bottom: 2px",
+      "{\\"width\\":\\"100%\\"}",
     ],
   },
   Object {
@@ -108,7 +112,7 @@ Array [
   Object {
     "__": "console.warn",
     "arguments": Array [
-      "%cDebugComponent%c > Re-render without props changes",
+      "%cDebugComponent%c > Re-render without changes",
       "color: green; font-weight: bold",
       "font-weight: bold",
     ],
