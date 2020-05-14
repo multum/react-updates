@@ -15,15 +15,23 @@ Trying to minimize the number of re-renders in our components using `PureCompone
 ![](https://img.shields.io/badge/built%20with-love-yellow?style=for-the-badge&color=fe7d37)
 ![](https://img.shields.io/badge/makes%20people-smile-yellow?style=for-the-badge&color=389ad5)
 
-## Getting started
-
-[![](https://img.shields.io/badge/sandbox-demo-yellow?style=for-the-badge&logo=codesandbox&color=389ad5)](https://codesandbox.io/s/react-updates-zm830)
+## Installation
 
 ```bash
 npm i --save-dev react-updates
 # or using yarn
 yarn add --dev react-updates
 ```
+
+OR using UMD build (exports a global `ReactUpdates` object)
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/react-updates/dist/react-updates.min.js"></script>
+```
+
+## Getting started
+
+[![](https://img.shields.io/badge/sandbox-demo-yellow?style=for-the-badge&logo=codesandbox&color=389ad5)](https://codesandbox.io/s/react-updates-zm830)
 
 ```javascript
 // src/index.js
