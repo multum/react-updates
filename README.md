@@ -66,7 +66,7 @@ const App = () => {
 ```
 
 <p align='center'>
-    <img width='680px' src='https://raw.githubusercontent.com/multum/react-updates/master/docs/component-styles.png'/>
+    <img width='680px' src='https://raw.githubusercontent.com/multum/react-updates/main/docs/component-styles.png'/>
 </p>
 
 ## Using a class component
@@ -98,4 +98,4 @@ Please also provide a **test plan**, i.e. specify how you verified that your add
 
 ## License
 
-**react-updates** is open source software [licensed as MIT](https://github.com/multum/react-updates/blob/master/LICENSE).
+**react-updates** is open source software [licensed as MIT](https://github.com/multum/react-updates/blob/main/LICENSE).
