@@ -1,4 +1,4 @@
-import { ComponentClass, FunctionComponent } from 'react';
+import { ComponentType, FunctionComponent } from 'react';
 
 interface DebuggerSettings {
   disabled?: boolean;
@@ -23,8 +23,8 @@ export function setDebuggerSettings(
  *   return '...'
  * };
  */
-export function useDebugger(
-  component: FunctionComponent | string,
+export function useDebugger<P = {}>(
+  component: FunctionComponent<P> | string,
   props: object
 ): void;
 
@@ -40,8 +40,8 @@ export function useDebugger(
  *   }
  * };
  */
-export function debugComponentUpdate(
-  component: ComponentClass | FunctionComponent | string,
+export function debugComponentUpdate<P = {}>(
+  component: ComponentType<P> | string,
   prevProps: object,
   props: object
 ): void;
