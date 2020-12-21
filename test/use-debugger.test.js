@@ -12,6 +12,9 @@ DebugComponent.displayName = 'DebugComponent';
 
 describe('useDebugger', () => {
   utils.mockConsole();
+  afterEach(() => {
+    setDebuggerSettings({ disabled: false });
+  });
 
   it('initial render', () => {
     const styles = { width: '100%' };
@@ -40,9 +43,20 @@ describe('useDebugger', () => {
     expect(console.calls).toMatchSnapshot();
   });
 
-  it('disable in settings', () => {
+  it('settings.disabled', () => {
     setDebuggerSettings({ disabled: true });
     render(<DebugComponent />);
     expect(console.calls).toEqual([]);
+  });
+
+  it('circular references', () => {
+    const Component = () => {
+      const foo = { bar: 0 };
+      foo.foo = foo;
+      return <DebugComponent foo={foo} />;
+    };
+    const { rerender } = render(<Component />);
+    rerender(<Component />);
+    expect(console.calls).toMatchSnapshot();
   });
 });

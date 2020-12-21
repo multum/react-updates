@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`useDebugger circular references 1`] = `
+Array [
+  Object {
+    "__": "console.info",
+    "arguments": Array [
+      "%cDebugComponent%c > Initial render",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+  Object {
+    "__": "console.group",
+    "arguments": Array [
+      "%cDebugComponent%c > Re-render with changes",
+      "color: green; font-weight: bold",
+      "font-weight: bold",
+    ],
+  },
+  Object {
+    "__": "console.info",
+    "arguments": Array [
+      "%c \\"foo\\" %c but not visually changed
+%c  - %s 
+%c  + %s ",
+      "background: white; color: black; line-height: 18px; margin-top: 2px",
+      "background: none; line-height: 18px; color: #ababab; font-size: .85em",
+      "background: #ffdce0; line-height: 18px; color: black",
+      "{\\"bar\\":0}",
+      "background: #cdffd8; line-height: 18px; color: black; margin-bottom: 2px",
+      "{\\"bar\\":0}",
+    ],
+  },
+  Object {
+    "__": "console.groupEnd",
+    "arguments": Array [],
+  },
+]
+`;
+
 exports[`useDebugger initial render 1`] = `
 Array [
   Object {
